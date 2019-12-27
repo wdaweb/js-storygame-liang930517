@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>Document</title>
+  </head>
+  <style>
+    a {
+      color: white;
+    }
+    a:hover {
+      color: gray;
+      text-decoration: underline !important; /*文字樣式*/
+    }
+  </style>
+  <body class="bg-dark text-white">
+    <div class="container">
+      <div class="row flex-column bg-primary vh-100"> 
+        <!--選單原本是直的 輸入flex-column變橫的 ; vh-100讓3個版面平均分配 -->
+
+        <div class="col-auto d-flex flex-column align-items-center">
+          <!-- ??還不懂 -->
+          <a class="h1" href="#">LOGO</a>
+          <nav class="nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Works</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </nav>
+        </div>
+
+        <div class="col d-flex flex-column justify-content-center align-items-center bg-danger">
+          <!-- ?? 不太懂-->
+          <img class="rounded-circle mb-3" src="https://picsum.photos/150/150/?random=1" />
+          <h1 class="mb-3">Bootstrap Layout</h1>
+          <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia obcaecati eius corporis quae consectetur? Omnis et totam est facere sit.</p>
+          <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        </div>
+        <div class="col-auto bg-info">
+          <p class="text-center">Design by MandyLiang</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
