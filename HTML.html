@@ -1,48 +1,47 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>關於CSS height高度屬性</title>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-        
-        <style>
-.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
-</style>
-        <style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        
-        
-    </head>
-    <body class="vscode-light">
-        <p><strong>上傳圖片</strong>
-<code>&lt;form action=&quot;&quot; method=&quot;&quot; enctype=&quot;multipart/form-data&quot;&gt;</code> enctype一定要寫</p>
-<p><strong>上傳檔案</strong>
-<code>&lt;form method=&quot;post&quot;...</code> 上傳檔案必須用&quot;post&quot;接住</p>
-<h2 id="%e9%97%9c%e6%96%bccss-height%e9%ab%98%e5%ba%a6%e5%b1%ac%e6%80%a7">關於CSS height高度屬性</h2>
-<ol>
-<li>height:100%
-如果在一個div設置一張背景圖，並設置width:100% ;hight:100% ，
-會發現div的高度根本稱不開。這時需在CSS設定</li>
-</ol>
-<pre><code class="language-html"><div>html,
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>關於CSS height高屬性</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css" />
+
+    <style>
+      .task-list-item {
+        list-style-type: none;
+      }
+      .task-list-item-checkbox {
+        margin-left: -20px;
+        vertical-align: middle;
+      }
+    </style>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body class="vscode-light">
+    <p><strong>上傳圖片</strong> <code>&lt;form action=&quot;&quot; method=&quot;&quot; enctype=&quot;multipart/form-data&quot;&gt;</code> enctype一定要寫</p>
+    <p><strong>上傳檔案</strong> <code>&lt;form method=&quot;post&quot;...</code> 上傳檔案必須用&quot;post&quot;接住</p>
+    <h2 id="%e9%97%9c%e6%96%bccss-height%e9%ab%98%e5%ba%a6%e5%b1%ac%e6%80%a7">關於CSS height高度屬性</h2>
+    <ol>
+      <li>height:100% 如果在一個div設置一張背景圖，並設置width:100% ;hight:100% ， 會發現div的高度根本稱不開。這時需在CSS設定</li>
+    </ol>
+    <pre><code class="language-html"><div>html,
 body{
     height:100%;
 }
 </div></code></pre>
-<p><strong>因為height的百分比值需要父級有一個可以生效的高度值才起作用。</strong></p>
-<ol>
-<li>height:100vh
-vh(view height)指瀏覽器內部的可視區域高度的百分比，window.innerWidth/window.innerHeight
-上述例子問題也可以使用vh單位解決，不用在html，body上設hight:100%
-但是vh單位在IE8以下版本不支援。</li>
-</ol>
-
-    </body>
-    </html>
+    <p><strong>因為height的百分比值需要父級有一個可以生效的高度值才起作用。</strong></p>
+    <ol>
+      <li>
+        height:100vh vh(view height)指瀏覽器內部的可視區域高度的百分比，window.innerWidth/window.innerHeight 上述例子問題也可以使用vh單位解決，不用在html，body上設hight:100%
+        但是vh單位在IE8以下版本不支援。
+      </li>
+    </ol>
+  </body>
+</html>
