@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="sweetalert2@9.js"></script>
+    <title>Do U Wanna Play The Game?</title>
+</head>
+
+
+<style>
+    body,
+    html {
+        height: 100%;
+    }
+
+    body {
+        background-image: url('img/bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+
+
+<body>
+
+
+
+    <script>
+        var name;
+        /* 輸入名字 */
+        Swal.fire({
+            title: 'I wanna play a game! Tell me your name.',
+            text: '請輸入你的名字',
+            input: 'text',
+            inputValue: '伊森', // 輸入框的type
+            inputAttributes: {
+                autocapitalize: 'on' //自動大寫功能
+            },
+            showCancelButton: true, // 秀出取消按鈕
+            confirmButtonText: 'Yes', //秀出確認按鈕的字
+            allowOutsideClick: false,
+            showLoaderOnConfirm: false, //確認之後秀出讀取的按鈕
+
+        }).then((result) => {
+            name = "膽小鬼";
+            if (result.dismiss) {
+                Swal.fire({
+                    allowOutsideClick: false,
+                    showCancelButton: false, // 秀出取消按鈕
+                    title: `don't run 別跑,就叫你${name}吧`,
+                    imageUrl: 'img/uv3I31.gif'
+                }).then(Game0);
+            }
+            else {
+                name = result.value;
+                Swal.fire({
+                    allowOutsideClick: false,
+                    title: `Hello ${name}, are you ready?`,
+                    confirmButtonText: "準備好了",
+                }).then(Game0);
+
+            }
+        })
+
+        function Game0() { //---------------------- game0
+            Swal.fire({
+                title: `So...${name} 你的朋友被抓走了，是否要去救他們?`,
+                text: "What Would You Do?",
+                confirmButtonText: '當然!!!',
+                cancelButtonText: 'No...先跑為妙',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                imageUrl: 'img/e43cd86d.jpg',
+                imageHeight: 300,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+            }).then((result) => {
+                if (result.dismiss === 'cancel') {  // wrong answer ------------------------
+                    Swal.fire({
+                        title: `不幸地,你沒能逃出去`,
+                        text: `GAME OVER`,
+                        confirmButtonText: "重新來過",
+                        allowOutsideClick: false,
+                        imageUrl: 'img/GAMEOVER.gif',
+                        imageHeight: 300
+                    }).then(Game0);
+                }
+                else {
+                    Swal.fire({
+                        allowOutsideClick: false,
+                        title: `欣賞你的勇氣...啟程拯救朋友吧`,
+                        imageUrl: 'img/giphy.gif'
+                    }).then(Game1);
+                }
+            });
+        }
+
+        function Game1() { //---------------------- game1
+            Swal.fire({
+                title: `聽到遠方傳來疑似朋友的呼救聲，這時你會...`,
+                text: "What Would You Do?",
+                confirmButtonText: '跟著聲音的方向過去看看!',
+                cancelButtonText: '不理會',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                imageUrl: 'img/confused.gif',
+                imageHeight: 300,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+            }).then((result) => {//---------------------- breakpoint
+                if (result.dismiss === 'cancel') {
+                    Swal.fire({
+                        title: `過關`,
+                        text: `那是鬼怪模仿人聲引你過去，順利躲過一劫!`,
+                        allowOutsideClick: false,
+                        imageUrl: 'img/raw.gif',
+                        imageHeight: 300
+                    }).then(Game2);
+                }
+                else {
+                    Swal.fire({
+                        title: `哎呀!跌落到敵人所設的陷阱中`,
+                        text: `GAME OVER`,
+                        allowOutsideClick: false,
+                        imageUrl: 'img/GAMEOVER.gif',
+                        confirmButtonText: "重新來過",
+                    }).then(Game1);
+                }
+            });
+        }
+
+        function Game2() { //---------------------- game2
+            Swal.fire({
+                title: `此時你聽到有個腳步聲向你靠近，這時你會...`,
+                text: "What Would You Do?",
+                confirmButtonText: '躲在床底下',
+                cancelButtonText: '躲在衣櫥裡',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                imageUrl: 'img/9655492.gif',
+                imageHeight: 300,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+            }).then((result) => {//---------------------- breakpoint
+                if (result.dismiss === 'cancel') {
+                    Swal.fire({
+                        title: `過關`,
+                        text: `你沒有被發現，順利逃過`,
+                        allowOutsideClick: false,
+                        imageUrl: 'https://media.giphy.com/media/AhS3usFjj22jvfjKqx/giphy.gif',
+                        imageHeight: 400
+                    }).then(Game3);
+                }
+                else {
+                    Swal.fire({
+                        allowOutsideClick: false,
+                        title: `糟糕!沒藏好被敵人發現`,
+                        text: `GAME OVER`,
+                        imageUrl: 'img/GAMEOVER.gif',
+                        confirmButtonText: "重新來過",
+                    }).then(Game2);
+                }
+            });
+        }
+
+        function Game3() { //---------------------- game3
+            Swal.fire({
+                title: `突然，你看見了朋友布萊克跟山姆往兩邊跑去，你會選擇去追...`,
+                text: "What Would You Do?",
+                confirmButtonText: '布萊克',
+                cancelButtonText: '山姆',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                imageUrl: 'img/210559_52.gif',
+                imageHeight: 300,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+            }).then((result) => {//---------------------- breakpoint
+                if (result.dismiss === 'cancel') {
+                    Swal.fire({
+                        allowOutsideClick: false,
+                        title: `你中了敵人製造的幻覺圈套`,
+                        text: `GAME OVER`,
+                        imageUrl: 'img/GAMEOVER.gif',
+                        confirmButtonText: "重新來過"
+                    }).then(Game3);
+                }
+                else {
+                    Swal.fire({
+                        title: `過關`,
+                        text: `順利救出布萊克，兩人繼續同行邁進`,
+                        allowOutsideClick: false,
+                        imageUrl: 'img/2019-12-31 12 06 36.gif',
+                        imageHeight: 300
+                    }).then(Game4);
+                }
+            });
+        }
+
+        function Game4() { //---------------------- game4
+            Swal.fire({
+                title: `你們站的地方突然坍塌了，布萊克眼看就要墜落，此時你會...`,
+                text: "What Would You Do?",
+                confirmButtonText: '拯救布萊克',
+                cancelButtonText: '跳至安全地點',
+                showCancelButton: true,
+                allowOutsideClick: false,
+                imageUrl: 'img/help.png',
+                imageHeight: 400,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33'
+            }).then((result) => {//---------------------- breakpoint
+                if (result.dismiss === 'cancel') {
+                    Swal.fire({
+                        title: `過關`,
+                        text: `你利用旁邊的工具順利救出布萊克`,
+                        allowOutsideClick: false,
+                        imageUrl: 'img/what-is-accountability-partner_post.jpg',
+                        imageHeight: 300
+                    }).then(Game5);
+                }
+                else {
+                    Swal.fire({
+                        allowOutsideClick: false,
+                        title: `因承受不住兩人的重量，你與布萊克都摔下去了`,
+                        text: `GAME OVER`,
+                        imageUrl: 'img/GAMEOVER.gif',
+                        confirmButtonText: "重新來過"
+                    }).then(Game4);
+
+                }
+            });
+        }
+
+        function Game5() { //---------------------- game5
+            Swal.fire({
+                allowOutsideClick: false,
+                title: `你們到了一間房間，凌亂桌上放著一封信`,
+                confirmButtonText: '閱讀',
+                imageUrl: 'img/dread-notes.jpg',
+                imageHeight: 300,
+                confirmButtonColor: '#3085d6',
+            }).then((result) => {//---------------------- breakpoint
+                Swal.fire({
+                    allowOutsideClick: false,
+                    imageUrl: 'img/letter2.jpg',
+                    imageSize: '554x576',
+                    imageAlt: 'A tall image',
+                    confirmButtonText: '看完了'
+                }).then(Final);
+            })
+        }
+
+        //Final();
+        function Final() {
+            document.body.style.backgroundImage = "url('img/tumblr_oyqxk9FF3o1sr3k70o2_r1_500.gif')";
+            setTimeout(youDied, 4000);
+        }
+
+        function youDied() {
+            document.body.style.backgroundImage = "url('img/GAMEOVER.gif')";
+        }
+
+
+
+    </script>
+</body>
+
+</html>

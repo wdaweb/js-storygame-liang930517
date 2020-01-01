@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio autoplay loop id="playAudio" muted>
+        <source src="img/Nocopyright.ogg" type="audio/ogg">
+        If you're reading this, audio isn't supported.
+    </audio>
+
+    <script>
+        var audio = document.getElementById("playAudio");
+        console.log("11");
+        if (audio.muted) {
+            audio.muted = false;
+            console.log("22");
+            audio.play();
+        }
+        else {
+            audio.muted = true;
+            audio.play();
+        }
+    </script>
+
+</body>
+
+</html>
